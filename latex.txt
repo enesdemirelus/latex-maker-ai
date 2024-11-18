@@ -1,0 +1,30 @@
+\begin{verbatim}
+\documentclass[12pt]{report}
+\usepackage{amsmath}
+
+\title{Detailed Summary of Double Integrals}
+\begin{document}
+\maketitle
+
+\section{Definition}
+Double integrals extend the concepts of definite integrals to functions of two variables. Given a function $f(x, y)$ of two variables defined on a domain $D$ in the $xy$-plane, the double integral of $f$ over $D$ is denoted as
+
+\begin{equation}
+\iint_D f(x, y) \,dx\,dy
+\end{equation}
+
+\section{Interpretation}
+In geometric terms, the double integral of a non-negative function $f(x, y)$ over a rectangle $R$ can be interpreted as the volume under the surface $z=f(x,y)$ above the region $R$. If the function takes on negative values, the "volume" is taken to be negative.
+
+\section{Evaluation}
+The standard method for evaluating a double integral is to convert it into an iterated integral. This is based on Fubini's theorem which says that for a rectangle $R=[a,b] \times [c,d]$,
+
+\begin{equation}
+\iint_R f(x, y) \,dx\,dy = \int_a^b \left( \int_c^d f(x, y) \,dy \right) \,dx = \int_c^d \left( \int_a^b f(x, y) \,dx \right) \,dy
+\end{equation}
+
+\section{Applications}
+Double integrals are widely used in physics, engineering and probability theory among others. They are used to compute mass, momentum, center of mass, inertia moments of plane regions and laminae, electric and magnetic fluxes in physics. In probability theory, they are used to determine the probability of some event, given a continuous bivariate probability distribution.
+
+\end{document}
+\end{verbatim}
