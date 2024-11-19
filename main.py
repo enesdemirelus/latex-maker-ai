@@ -14,14 +14,14 @@ def latex_maker_ai(api_key, prompt):
             {
                 "role": "system",
                 "content": (
-                    "You will receive a specific topic provided by the user. Based solely on this topic, your task is to generate a highly detailed and professional college-level summary or explanation. Your response must be crafted entirely as a well-structured and visually appealing LaTeX code, ensuring the output is optimized for professional presentation. The only thing you should return is the LaTeX code—no additional text, explanations, or comments. Do not ever use code: 'verbatim', never! DONT USE VERBATIM!!!!"
+                    "You will receive a specific topic provided by the user. Based solely on this topic, your task is to generate a highly detailed and professional college-level summary or explanation. Your response must be crafted entirely as a well-structured and visually appealing LaTeX code, ensuring the output is optimized for professional presentation. The only thing you should return is the LaTeX code—no additional text, explanations, or comments."
                 ),
             },
             {"role": "user", "content": prompt},
         ],
     )
     
-    print("Code is successfully written")
+    print("Code is successfully generated!")
     return response.choices[0].message.content
 
 
@@ -43,8 +43,36 @@ def file_saver(latex_code, prompt):
     with open(file_path, "w") as file:
         file.write(latex_code)
         
-    print("Code is successfully written into .tex file")
+    print("Code is successfully written into .tex file!")
     return folder_name
+
+
+def verbatim_remover(folder_name):
+    current_dir = Path(__file__).parent
+
+    subfolder = "latex_files"
+    file_name = f"{folder_name}.tex"
+    file_path = current_dir / subfolder / folder_name / file_name
+
+    with open(file_path, 'r', encoding='utf-8') as file:
+        content = file.read()
+    
+    if (r'\documentclass{article}' not in content):
+        print()
+        content = content.replace(r'\begin{verbatim}', r'\documentclass{article}')
+    else:
+        content = content.replace(r'\begin{verbatim}', '')
+    
+    content = content.replace(r'\end{verbatim}', '')
+    
+    with open(file_path, 'w', encoding='utf-8') as file:
+        file.write(content)
+        file.close()
+    
+    print("All unnecessary code has been deleted from the .tex file")
+    
+    
+    
     
 def latex_compiler(folder_name):
     current_dir = Path(__file__).parent
@@ -75,10 +103,13 @@ if "__main__" == __name__:
         config = json.load(config_file)
         
     openai_api_key = config["openai_api_key"]
+    
     prompt_from_user = input("Please enter the topic in few words (Do not enter any custom ChatGPT prompt here!!): ")
     latex_code = latex_maker_ai(openai_api_key, prompt_from_user)
-    folder_name = file_saver(latex_code, prompt_from_user)
-    latex_compiler(folder_name)
 
+    folder_name = file_saver(latex_code, prompt_from_user)
+    verbatim_remover(folder_name)
+    latex_compiler(folder_name)
+    
     
     
