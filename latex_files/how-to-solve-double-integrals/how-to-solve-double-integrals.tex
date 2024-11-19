@@ -1,0 +1,47 @@
+
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{How To Solve Double Integrals}
+\author{}
+\date{}
+\maketitle
+
+Double integrals extend the concept of a one-dimensional integral to two dimensions. A double integral, denoted as $\iint_R f(x, y) \,dy\,dx$, measures the volume under a surface $f(x, y)$ as bounded by a region $R$ in the $xy$-plane.
+
+\section{Steps to Solve a Double Integral}
+
+\begin{enumerate}
+    \item Determine and clearly define the limits of integration. 
+    \item Evaluate the inner integral first, treating the other variable as a constant.
+    \item Evaluate the outer integral, which will give a number that is the solution of the double integral.
+\end{enumerate}
+
+\section{Example}
+
+Consider the double integral $\iint_R y\,dy\,dx$, where $R$ is the rectangle defined by $0 \leq x \leq 2$, $0 \leq y \leq 3$.
+
+Following the steps defined above:
+
+\begin{enumerate}
+    \item The limits of $x$ are $0$ and $2$. The limits of $y$ are $0$ and $3$.
+    \item Begin by integrating the function $f(x,y)=y$ with respect to $y$:
+
+    \begin{equation*}
+        \int_{0}^{3} y\,dy = \left. \frac{1}{2} y^2 \right|_{0}^{3} = \frac{1}{2} (3)^2 = \frac{9}{2}
+    \end{equation*}
+
+    This results in a function $g(x)=\frac{9}{2}$ which depends only on $x$, but $x$ does not actually appear in $g(x)$.
+    \item Now, integrate $g(x)$ with respect to $x$:
+
+    \begin{equation*}
+        \int_{0}^{2} \frac{9}{2}\,dx = \left. \frac{9}{2} x \right|_{0}^{2} = \frac{9}{2} (2) = 9
+    \end{equation*}
+\end{enumerate}
+
+Hence, the result is $9$, which represents the volume under the function $y$ and above the rectangle $R$ on the $xy$-plane.
+
+\end{document}
+
