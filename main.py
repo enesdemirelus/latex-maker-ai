@@ -109,6 +109,7 @@ if "__main__" == __name__:
 
     folder_name = file_saver(latex_code, prompt_from_user)
     verbatim_remover(folder_name)
+    
     latex_compiler(folder_name)
     
     
