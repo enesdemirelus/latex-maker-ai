@@ -52,9 +52,3 @@ This is a simple, single-file application that generates beautiful LaTeX files b
 
 - Ensure your LaTeX distribution is installed and in your system's PATH.
 - Ensure internet access to interact with the OpenAI API.
-
----
-
-## License
-
-This project is licensed under the MIT License.
