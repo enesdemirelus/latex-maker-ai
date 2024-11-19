@@ -20,7 +20,7 @@ This is a simple, single-file application that generates beautiful LaTeX files b
    - Install with: `pip install openai pdflatex pathlib`
 
 4. **OpenAI API Key**
-   - Save your API key in a `config.json` file:
+   - Create a `config.json` file, and save your API key in the `config.json` file:
      ```json
      {
        "openai_api_key": "your-api-key-here"
