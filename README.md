@@ -1,1 +1,1 @@
-# latex-maker-ai
+This is a simple, single-file application that generates beautiful LaTeX files based on the prompt you provide. The content and structure of the file will be created by ChatGPT. For example, you can ask ChatGPT to create a "How to Solve Double Integrals" file, and it will generate both the content and the LaTeX code. The LaTeX file is then converted into a PDF locally.
