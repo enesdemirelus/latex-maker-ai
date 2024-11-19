@@ -32,9 +32,8 @@ This is a simple, single-file application that generates beautiful LaTeX files b
 ## How to Run
 
 1. Clone or download this repository.
-2. Install dependencies: `pip install -r requirements.txt`
-3. Run the script: `python your_script_name.py`
-4. Enter a topic when prompted, and the program will:
+2. Run the script: `python your_script_name.py`
+3. Enter a topic when prompted, and the program will:
    - Generate a `.tex` file in the `latex_files/` directory.
    - Compile it into a PDF.
 
