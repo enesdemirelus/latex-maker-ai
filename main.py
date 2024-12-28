@@ -1,9 +1,9 @@
 import json
 import openai
-import os
 import subprocess
 from pdflatex import PDFLaTeX
 from pathlib import Path
+import os
 
 
 def latex_maker_ai(api_key, prompt):
